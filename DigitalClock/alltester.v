@@ -4,9 +4,9 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   06:06:59 03/24/2019
+// Create Date:   18:53:09 03/26/2019
 // Design Name:   CloclSystem
-// Module Name:   /home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/alltester.v
+// Module Name:   C:/Users/Administrator/Desktop/hust-digital-circuits-lab-master/DigitalClock/alltester.v
 // Project Name:  DigitalClock
 // Target Device:  
 // Tool versions:  
@@ -30,8 +30,7 @@ module alltester;
 	reg en;
 	reg [1:0] clock_set_select;
 	reg [1:0] alarm_set_select;
-	reg alarm_en;
-	reg ratio_en;
+	reg alarm_and_ratio_en;
 	reg confirm;
 	reg day_set;
 
@@ -40,8 +39,6 @@ module alltester;
 	wire is_pm;
 	wire [6:0] seg;
 	wire [7:0] pos;
-	wire [7:0] output_hour_day;
-	wire [7:0] output_minute;
 	wire [7:0] output_second;
 
 	// Instantiate the Unit Under Test (UUT)
@@ -51,16 +48,13 @@ module alltester;
 		.en(en), 
 		.clock_set_select(clock_set_select), 
 		.alarm_set_select(alarm_set_select), 
-		.alarm_en(alarm_en), 
-		.ratio_en(ratio_en), 
+		.alarm_and_ratio_en(alarm_and_ratio_en), 
 		.confirm(confirm), 
 		.day_set(day_set), 
 		.alarm(alarm), 
 		.is_pm(is_pm), 
 		.seg(seg), 
 		.pos(pos), 
-		.output_hour_day(output_hour_day), 
-		.output_minute(output_minute), 
 		.output_second(output_second)
 	);
 
@@ -71,8 +65,7 @@ module alltester;
 		en = 1;
 		clock_set_select = 0;
 		alarm_set_select = 0;
-		alarm_en = 0;
-		ratio_en = 0;
+		alarm_and_ratio_en = 0;
 		confirm = 0;
 		day_set = 1;
 
@@ -84,7 +77,7 @@ module alltester;
 		#100
 		clock_set_select=2'b10;
 		confirm=1;
-		alarm_en=1;
+		alarm_and_ratio_en=1;
 		#3000
 		clock_set_select=2'b11;
 		#3000

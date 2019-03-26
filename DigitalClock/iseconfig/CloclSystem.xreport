@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2019-03-24T21:47:25</DateModified>
+  <DateModified>2019-03-26T18:54:58</DateModified>
   <ModuleName>CloclSystem</ModuleName>
-  <SummaryTimeStamp>2019-03-23T11:25:45</SummaryTimeStamp>
-  <SavedFilePath>/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/iseconfig/CloclSystem.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2019-03-26T18:49:38</SummaryTimeStamp>
+  <SavedFilePath>C:/Users/Administrator/Desktop/hust-digital-circuits-lab-master/DigitalClock/iseconfig/CloclSystem.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/Administrator/Desktop/hust-digital-circuits-lab-master/DigitalClock\</ImplementationReportsDirectory>
   <DateInitialized>2019-03-23T11:17:30</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

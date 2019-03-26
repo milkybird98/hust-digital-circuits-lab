@@ -24,14 +24,12 @@ module HourAlarm(
     input cr,
     input en,
     input day_set,
-    output hour_alarm,
-	 output reg [7:0] last,
-	 output [7:0] hour_out_tmp
+    output hour_alarm
     );
 
     wire modify,borr,mid_night;
-    wire [7:0] hour_tmp/*,hour_out_tmp*/;
-    //reg [7:0] last;
+    wire [7:0] hour_tmp,hour_out_tmp;
+    reg [7:0] last;
     reg blink_en;
     assign modify=(hour[7:4]>1)||((hour[7:4]==1))&&(hour[3:0]>2);
     assign borr=(hour[3:0]<2)?1:0;
