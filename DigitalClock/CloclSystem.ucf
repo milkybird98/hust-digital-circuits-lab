@@ -1,0 +1,37 @@
+
+
+NET "alarm_set_select[1]" LOC = N3;
+NET "alarm_set_select[0]" LOC = E2;
+NET "clock_set_select[1]" LOC = F3;
+NET "clock_set_select[0]" LOC = G3;
+
+
+NET "output_second[6]" LOC = P4;
+NET "output_second[5]" LOC = N4;
+NET "output_second[4]" LOC = N5;
+NET "output_second[3]" LOC = P6;
+NET "output_second[2]" LOC = P7;
+NET "output_second[1]" LOC = M11;
+NET "output_second[0]" LOC = M5;
+NET "pos[2]" LOC = F12;
+NET "pos[3]" LOC = J12;
+NET "pos[4]" LOC = M13;
+NET "pos[5]" LOC = K14;
+NET "seg[6]" LOC = L14;
+NET "seg[5]" LOC = H12;
+NET "seg[4]" LOC = N14;
+NET "seg[3]" LOC = N11;
+NET "seg[2]" LOC = P12;
+NET "seg[1]" LOC = L13;
+NET "seg[0]" LOC = M12;
+NET "alarm" LOC = N13;
+NET "clk_50m" LOC = B8;
+NET "confirm" LOC = M4;
+NET "day_set" LOC = K3;
+NET "cr" LOC = P11;
+NET "is_pm" LOC = G1;
+
+# PlanAhead Generated physical constraints 
+
+NET "alarm_and_ratio_en" LOC = B4;
+NET "en" LOC = L3;

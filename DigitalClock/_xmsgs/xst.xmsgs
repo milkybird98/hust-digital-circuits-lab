@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="warning" file="HDLCompilers" num="93" delta="old" ><arg fmt="%s" index="1">&quot;CloclSystem.v&quot; line 50 </arg>Too few port connections in instance &apos;<arg fmt="%s" index="2">uration</arg>&apos; of module &apos;<arg fmt="%s" index="3">HourAlarm</arg>&apos;
+<msg type="warning" file="HDLCompilers" num="298" delta="old" ><arg fmt="%s" index="1">&quot;ClkDivider.v&quot; line 43 </arg>Too many digits specified in decimal constant
 </msg>
 
 <msg type="warning" file="Xst" num="646" delta="old" >Signal &lt;<arg fmt="%s" index="1">up</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.

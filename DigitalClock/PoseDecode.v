@@ -24,6 +24,7 @@ module PoseDecode(
     );
     always@(bcd_pos)
     case(bcd_pos)
+	 /*
     4'b0000:pos <= 8'b0000_0001;
     4'b0001:pos <= 8'b0000_0010;
     4'b0010:pos <= 8'b0000_0100;
@@ -31,6 +32,14 @@ module PoseDecode(
 	 4'b0100:pos <= 8'b0001_0000;
 	 4'b0101:pos <= 8'b0010_0000;
     default:pos <= 8'b0000_0000;
+	 */
+	 4'b0000:pos <= 8'b1111_1110;
+    4'b0001:pos <= 8'b1111_1101;
+    4'b0010:pos <= 8'b1111_1011;
+    4'b0011:pos <= 8'b1111_0111;
+	 4'b0100:pos <= 8'b1110_1111;
+	 4'b0101:pos <= 8'b1101_1111;
+    default:pos <= 8'b1111_1111;
     endcase
 
 

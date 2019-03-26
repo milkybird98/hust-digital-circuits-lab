@@ -26,7 +26,7 @@ module ClkDivider(
     output reg clk_1k
     );
 
-    reg [15:0] count1k;
+    reg [32:0] count1k;
     reg [32:0] count1hz;
     reg [32:0] count2hz;
 
@@ -40,7 +40,7 @@ always@(posedge clk_50m or negedge cr)
     else
     begin
         //if(count1k==16'd24999)
-		  if(count1k==16'd1)
+		  if(count1k==16'd24999999)
         begin
             count1k<=0;
             clk_1k<=~clk_1k;
@@ -58,8 +58,8 @@ always@(posedge clk_50m or negedge cr)
     end
     else
     begin
-        //if(count1hz==32'd24999999)
-		  if(count1hz==32'd249)
+        if(count1hz==32'd24999999)
+		  //if(count1hz==32'd249)
         begin
             count1hz<=0;
             clk_1hz<=~clk_1hz;
@@ -77,8 +77,8 @@ always@(posedge clk_50m or negedge cr)
     end
     else
     begin
-        //if(count2hz==32'd12499999)
-		  if(count2hz==32'd124)
+        if(count2hz==32'd12499999)
+		  //if(count2hz==32'd124)
         begin
             count2hz<=0;
             clk_2hz<=~clk_2hz;
