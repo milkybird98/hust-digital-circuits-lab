@@ -1,0 +1,5 @@
+set -tmpdir "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/xst/projnav.tmp"
+set -xsthdpdir "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/xst"
+elaborate
+-ifn PoseDecode.prj
+-ifmt mixed

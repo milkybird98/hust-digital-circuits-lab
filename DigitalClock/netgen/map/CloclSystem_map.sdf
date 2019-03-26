@@ -1,0 +1,39 @@
+(DELAYFILE
+  (SDFVERSION "3.0")
+  (DESIGN "CloclSystem")
+  (DATE "Sat Mar 23 11:18:35 2019")
+  (VENDOR "Xilinx")
+  (PROGRAM "Xilinx SDF Writer")
+  (VERSION "P.20131013")
+  (DIVIDER /)
+  (VOLTAGE 1.14)
+  (TEMPERATURE 85)
+  (TIMESCALE 1 ps)
+  (CELL (CELLTYPE "X_OBUF")
+    (INSTANCE alarm_OBUF)
+      (DELAY
+        (ABSOLUTE
+          (PORT I ( 599 ))
+          (IOPATH I O ( 2068 ))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE alarm\/OUTPUT\/OFF\/OMUX)
+      (DELAY
+        (PATHPULSE (798))
+        (ABSOLUTE
+          (IOPATH I O ( 580 ))
+        )
+      )
+  )
+  (CELL (CELLTYPE "X_BUF")
+    (INSTANCE alarm\/OUTPUT\/OFF\/O1INV)
+      (DELAY
+        (PATHPULSE (798))
+        (ABSOLUTE
+          (IOPATH I O ( 0 ))
+        )
+      )
+  )
+)

@@ -1,0 +1,3 @@
+verilog work "HourAlarm.v"
+verilog work "ratiotester.v"
+verilog work "/home/milkybird98/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

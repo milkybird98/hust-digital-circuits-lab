@@ -1,0 +1,6 @@
+NET "clk" LOC = B8;
+NET "M" LOC = P11;
+NET "a" LOC = M5;
+NET "b" LOC = M11;
+NET "c" LOC = P7;
+NET "cr" LOC = L3;

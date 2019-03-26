@@ -1,0 +1,4 @@
+verilog work "PoseDecode.v"
+verilog work "Mix6to1.v"
+verilog work "BCD7SEG.v"
+verilog work "DigitalScan.v"

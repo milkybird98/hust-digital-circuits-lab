@@ -1,0 +1,508 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.37 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.37 secs
+ 
+--> Reading design: StepMotorDriver.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "StepMotorDriver.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "StepMotorDriver"
+Output Format                      : NGC
+Target Device                      : xc3s100e-4-cp132
+
+---- Source Options
+Top Module Name                    : StepMotorDriver
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "StepMotorDriver.v" in library work
+Module <StepMotorDriver> compiled
+Module <Divider> compiled
+No errors in compilation
+Analysis of file <"StepMotorDriver.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <StepMotorDriver> in library <work> with parameters.
+	s0 = "100"
+	s1 = "110"
+	s2 = "010"
+	s3 = "011"
+	s4 = "001"
+	s5 = "101"
+	s6 = "000"
+	s7 = "111"
+
+Analyzing hierarchy for module <Divider> in library <work> with parameters.
+	CLK_GET = "00000010111110101111000010000000"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <StepMotorDriver>.
+	s0 = 3'b100
+	s1 = 3'b110
+	s2 = 3'b010
+	s3 = 3'b011
+	s4 = 3'b001
+	s5 = 3'b101
+	s6 = 3'b000
+	s7 = 3'b111
+Module <StepMotorDriver> is correct for synthesis.
+ 
+Analyzing module <Divider> in library <work>.
+	CLK_GET = 32'sb00000010111110101111000010000000
+Module <Divider> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Divider>.
+    Related source file is "StepMotorDriver.v".
+    Found 1-bit register for signal <clk_low>.
+    Found 33-bit up counter for signal <count>.
+    Found 33-bit comparator less for signal <count$cmp_lt0000> created at line 101.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <Divider> synthesized.
+
+
+Synthesizing Unit <StepMotorDriver>.
+    Related source file is "StepMotorDriver.v".
+INFO:Xst:2117 - HDL ADVISOR - Mux Selector <current_status> of Case statement line 44 was re-encoded using one-hot encoding. The case statement will be optimized (default statement optimization), but this optimization may lead to design initialization problems. To ensure the design works safely, you can:
+   	- add an 'INIT' attribute on signal <current_status> (optimization is then done without any risk)
+   	- use the attribute 'signal_encoding user' to avoid onehot optimization
+   	- use the attribute 'safe_implementation yes' to force XST to perform a safe (but less efficient) optimization
+INFO:Xst:1799 - State 000 is never reached in FSM <current_status>.
+INFO:Xst:1799 - State 111 is never reached in FSM <current_status>.
+    Found finite state machine <FSM_0> for signal <current_status>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 12                                             |
+    | Inputs             | 1                                              |
+    | Outputs            | 6                                              |
+    | Clock              | clk_low                   (rising_edge)        |
+    | Reset              | cr                        (negative)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 100                                            |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Summary:
+	inferred   1 Finite State Machine(s).
+Unit <StepMotorDriver> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 1
+ 33-bit up counter                                     : 1
+# Registers                                            : 1
+ 1-bit register                                        : 1
+# Comparators                                          : 1
+ 33-bit comparator less                                : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <current_status/FSM> on signal <current_status[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | unreached
+ 001   | 001
+ 010   | 010
+ 011   | 011
+ 100   | 100
+ 101   | 101
+ 110   | 110
+ 111   | unreached
+-------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Counters                                             : 1
+ 33-bit up counter                                     : 1
+# Registers                                            : 1
+ Flip-Flops                                            : 1
+# Comparators                                          : 1
+ 33-bit comparator less                                : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <StepMotorDriver> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block StepMotorDriver, actual ratio is 3.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 37
+ Flip-Flops                                            : 37
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : StepMotorDriver.ngr
+Top Level Output File Name         : StepMotorDriver
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 6
+
+Cell Usage :
+# BELS                             : 133
+#      GND                         : 1
+#      INV                         : 6
+#      LUT1                        : 4
+#      LUT3                        : 40
+#      LUT4                        : 4
+#      MUXCY                       : 44
+#      VCC                         : 1
+#      XORCY                       : 33
+# FlipFlops/Latches                : 37
+#      FDC                         : 35
+#      FDCE                        : 1
+#      FDP                         : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 5
+#      IBUF                        : 2
+#      OBUF                        : 3
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s100ecp132-4 
+
+ Number of Slices:                       26  out of    960     2%  
+ Number of Slice Flip Flops:             37  out of   1920     1%  
+ Number of 4 input LUTs:                 54  out of   1920     2%  
+ Number of IOs:                           6
+ Number of bonded IOBs:                   6  out of     83     7%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)        | Load  |
+-----------------------------------+------------------------------+-------+
+clk                                | BUFGP                        | 34    |
+D1/clk_low                         | NONE(current_status_FSM_FFd3)| 3     |
+-----------------------------------+------------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+D1/cr_inv(D1/cr_inv1_INV_0:O)      | NONE(D1/clk_low)       | 37    |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 8.709ns (Maximum Frequency: 114.822MHz)
+   Minimum input arrival time before clock: 2.936ns
+   Maximum output required time after clock: 5.795ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 8.709ns (frequency: 114.822MHz)
+  Total number of paths / destination ports: 16032 / 35
+-------------------------------------------------------------------------
+Delay:               8.709ns (Levels of Logic = 47)
+  Source:            D1/count_7 (FF)
+  Destination:       D1/count_32 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: D1/count_7 to D1/count_32
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              2   0.591   0.622  D1/count_7 (D1/count_7)
+     LUT1:I0->O            1   0.704   0.000  D1/Mcompar_count_cmp_lt0000_cy<0>_rt (D1/Mcompar_count_cmp_lt0000_cy<0>_rt)
+     MUXCY:S->O            1   0.464   0.000  D1/Mcompar_count_cmp_lt0000_cy<0> (D1/Mcompar_count_cmp_lt0000_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcompar_count_cmp_lt0000_cy<1> (D1/Mcompar_count_cmp_lt0000_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcompar_count_cmp_lt0000_cy<2> (D1/Mcompar_count_cmp_lt0000_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcompar_count_cmp_lt0000_cy<3> (D1/Mcompar_count_cmp_lt0000_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcompar_count_cmp_lt0000_cy<4> (D1/Mcompar_count_cmp_lt0000_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcompar_count_cmp_lt0000_cy<5> (D1/Mcompar_count_cmp_lt0000_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcompar_count_cmp_lt0000_cy<6> (D1/Mcompar_count_cmp_lt0000_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcompar_count_cmp_lt0000_cy<7> (D1/Mcompar_count_cmp_lt0000_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcompar_count_cmp_lt0000_cy<8> (D1/Mcompar_count_cmp_lt0000_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcompar_count_cmp_lt0000_cy<9> (D1/Mcompar_count_cmp_lt0000_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcompar_count_cmp_lt0000_cy<10> (D1/Mcompar_count_cmp_lt0000_cy<10>)
+     MUXCY:CI->O          35   0.331   1.298  D1/Mcompar_count_cmp_lt0000_cy<11> (D1/Mcompar_count_cmp_lt0000_cy<11>)
+     LUT3:I2->O            1   0.704   0.000  D1/Mcount_count_lut<0> (D1/Mcount_count_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  D1/Mcount_count_cy<0> (D1/Mcount_count_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<1> (D1/Mcount_count_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<2> (D1/Mcount_count_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<3> (D1/Mcount_count_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<4> (D1/Mcount_count_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<5> (D1/Mcount_count_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<6> (D1/Mcount_count_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<7> (D1/Mcount_count_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<8> (D1/Mcount_count_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<9> (D1/Mcount_count_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<10> (D1/Mcount_count_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<11> (D1/Mcount_count_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<12> (D1/Mcount_count_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<13> (D1/Mcount_count_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<14> (D1/Mcount_count_cy<14>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<15> (D1/Mcount_count_cy<15>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<16> (D1/Mcount_count_cy<16>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<17> (D1/Mcount_count_cy<17>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<18> (D1/Mcount_count_cy<18>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<19> (D1/Mcount_count_cy<19>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<20> (D1/Mcount_count_cy<20>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<21> (D1/Mcount_count_cy<21>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<22> (D1/Mcount_count_cy<22>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<23> (D1/Mcount_count_cy<23>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<24> (D1/Mcount_count_cy<24>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<25> (D1/Mcount_count_cy<25>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<26> (D1/Mcount_count_cy<26>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<27> (D1/Mcount_count_cy<27>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<28> (D1/Mcount_count_cy<28>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<29> (D1/Mcount_count_cy<29>)
+     MUXCY:CI->O           1   0.059   0.000  D1/Mcount_count_cy<30> (D1/Mcount_count_cy<30>)
+     MUXCY:CI->O           0   0.059   0.000  D1/Mcount_count_cy<31> (D1/Mcount_count_cy<31>)
+     XORCY:CI->O           1   0.804   0.000  D1/Mcount_count_xor<32> (D1/Mcount_count32)
+     FDC:D                     0.308          D1/count_32
+    ----------------------------------------
+    Total                      8.709ns (6.789ns logic, 1.920ns route)
+                                       (78.0% logic, 22.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'D1/clk_low'
+  Clock period: 2.315ns (frequency: 431.965MHz)
+  Total number of paths / destination ports: 6 / 3
+-------------------------------------------------------------------------
+Delay:               2.315ns (Levels of Logic = 1)
+  Source:            current_status_FSM_FFd2 (FF)
+  Destination:       current_status_FSM_FFd3 (FF)
+  Source Clock:      D1/clk_low rising
+  Destination Clock: D1/clk_low rising
+
+  Data Path: current_status_FSM_FFd2 to current_status_FSM_FFd3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              5   0.591   0.712  current_status_FSM_FFd2 (current_status_FSM_FFd2)
+     LUT3:I1->O            1   0.704   0.000  current_status_FSM_FFd3-In1 (current_status_FSM_FFd3-In)
+     FDC:D                     0.308          current_status_FSM_FFd3
+    ----------------------------------------
+    Total                      2.315ns (1.603ns logic, 0.712ns route)
+                                       (69.2% logic, 30.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'D1/clk_low'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              2.936ns (Levels of Logic = 2)
+  Source:            M (PAD)
+  Destination:       current_status_FSM_FFd3 (FF)
+  Destination Clock: D1/clk_low rising
+
+  Data Path: M to current_status_FSM_FFd3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.218   0.706  M_IBUF (M_IBUF)
+     LUT3:I0->O            1   0.704   0.000  current_status_FSM_FFd3-In1 (current_status_FSM_FFd3-In)
+     FDC:D                     0.308          current_status_FSM_FFd3
+    ----------------------------------------
+    Total                      2.936ns (2.230ns logic, 0.706ns route)
+                                       (76.0% logic, 24.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'D1/clk_low'
+  Total number of paths / destination ports: 9 / 3
+-------------------------------------------------------------------------
+Offset:              5.795ns (Levels of Logic = 2)
+  Source:            current_status_FSM_FFd1 (FF)
+  Destination:       a (PAD)
+  Source Clock:      D1/clk_low rising
+
+  Data Path: current_status_FSM_FFd1 to a
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              5   0.591   0.808  current_status_FSM_FFd1 (current_status_FSM_FFd1)
+     LUT3:I0->O            1   0.704   0.420  a1 (a_OBUF)
+     OBUF:I->O                 3.272          a_OBUF (a)
+    ----------------------------------------
+    Total                      5.795ns (4.567ns logic, 1.228ns route)
+                                       (78.8% logic, 21.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 13.56 secs
+ 
+--> 
+
+Total memory usage is 4606868 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
+

@@ -1,0 +1,53 @@
+Running: /home/milkybird98/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/alltester_isim_beh.exe" -prj "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/alltester_beh.prj" "work.alltester" "work.glbl" 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/BCDCounterx6.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/BCDCounterx10.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/counter60.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/counter24.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/PoseDecode.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/Mix6to1.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/BCD7SEG.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/AlarmSet.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/HourAlarm.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/DigitalScan.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/Day24or12.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/ClockAndSet.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/ClockAlarm.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/ClkDivider.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/CloclSystem.v" into library work
+WARNING:HDLCompiler:751 - "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/CloclSystem.v" Line 40: Redeclaration of ansi port output_minute is not allowed
+WARNING:HDLCompiler:751 - "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/CloclSystem.v" Line 41: Redeclaration of ansi port output_hour_day is not allowed
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/alltester.v" into library work
+Analyzing Verilog file "/home/milkybird98/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "/home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/CloclSystem.v" Line 50: Port last is not connected to this instance
+Completed static elaboration
+Fuse Memory Usage: 83076 KB
+Fuse CPU Usage: 1770 ms
+Compiling module ClkDivider
+Compiling module BCDCounterx10
+Compiling module BCDCounterx6
+Compiling module counter60
+Compiling module counter24
+Compiling module ClockAndSet
+Compiling module AlarmSet
+Compiling module ClockAlarm
+Compiling module Day24or12
+Compiling module HourAlarm
+Compiling module Mix6to1
+Compiling module PoseDecode
+Compiling module BCD7SEG
+Compiling module DigitalScan
+Compiling module CloclSystem
+Compiling module alltester
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 17 Verilog Units
+Built simulation executable /home/milkybird98/Xilinx/14.7/ISE_DS/DigitalClock/alltester_isim_beh.exe
+Fuse Memory Usage: 1167728 KB
+Fuse CPU Usage: 1810 ms
+GCC CPU Usage: 280 ms

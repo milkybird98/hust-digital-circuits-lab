@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=D:\Document\step_motor\StepMotorDriver.ncd
+OUTFILE=D:\Document\step_motor\StepMotorDriver.bit
+FAMILY=Spartan3E
+PART=xc3s100e-4cp132
+WORKINGDIR=D:\Document\step_motor
+LICENSE=ISE
+USER_INFO=135256_15690819_173552794_661

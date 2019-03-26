@@ -1,0 +1,3 @@
+verilog work "StepMotorDriver.v"
+verilog work "stepmotortester.v"
+verilog work "/home/milky/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

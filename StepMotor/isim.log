@@ -1,0 +1,42 @@
+ISim log file
+Running: /home/milky/step_motor/stepmotortester_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/milky/step_motor/stepmotortester_isim_beh.wdb 
+INFO: There is another simulation running in the same directory. Using database file name isim1.wdb.
+ISim P.20131013 (signature 0xfbc00daa)
+----------------------------------------------------------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
+
+
+----------------------------------------------------------------------
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run all
+Stopped at time : 818801 ns : File "/home/milky/step_motor/StepMotorDriver.v" Line 96
+# exit 0
+ISim P.20131013 (signature 0xfbc00daa)
+----------------------------------------------------------------------
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
+
+
+----------------------------------------------------------------------
+This is a Full version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run all
+Stopped at time : 817375 ns : File "/home/milky/step_motor/stepmotortester.v" Line 67
+# step
+Stopped at time : 817375 ns : File "/home/milky/step_motor/StepMotorDriver.v" Line 95
+# run all
+Stopped at time : 817375 ns : File "/home/milky/step_motor/StepMotorDriver.v" Line 96
+# run all
+Stopped at time : 817375 ns : File "/home/milky/step_motor/StepMotorDriver.v" Line 94
+# step
+Stopped at time : 817376 ns : File "/home/milky/step_motor/stepmotortester.v" Line 67
+# step
+Stopped at time : 817377 ns : File "/home/milky/step_motor/stepmotortester.v" Line 67
+# exit 0

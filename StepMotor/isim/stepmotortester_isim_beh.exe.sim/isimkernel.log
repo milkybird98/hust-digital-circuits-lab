@@ -1,0 +1,28 @@
+Command line:
+   stepmotortester_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  40681
+
+Mon Mar 25 22:01:16 2019
+
+
+ Elaboration Time: 0.04 sec
+
+ Current Memory Usage: 196.235 Meg
+
+ Total Signals          : 22
+ Total Nets             : 20
+ Total Signal Drivers   : 12
+ Total Blocks           : 4
+ Total Primitive Blocks : 2
+ Total Processes        : 19
+ Total Traceable Variables  : 37
+ Total Scalar Nets and Variables : 202
+
+ Total Simulation Time: 1.76 sec
+
+ Current Memory Usage: 271.737 Meg
+
+Mon Mar 25 22:02:20 2019
+

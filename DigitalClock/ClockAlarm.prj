@@ -1,0 +1,6 @@
+verilog work "BCDCounterx6.v"
+verilog work "BCDCounterx10.v"
+verilog work "counter60.v"
+verilog work "counter24.v"
+verilog work "AlarmSet.v"
+verilog work "ClockAlarm.v"
